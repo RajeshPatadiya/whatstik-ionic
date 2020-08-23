@@ -1,0 +1,20 @@
+<!-- <div>
+  <p *ngIf="menuItem.children; else finalItem">
+    <ion-button [color]="isRoot ? 'primary' : 'secondary'" [expand]="isRoot ? 'full' : 'block'"
+      (click)="isOpen = !isOpen">
+      {{ menuItem.name }}
+    </ion-button>
+
+    <span *ngIf="isOpen">
+      <app-menu-item *ngFor="let item of menuItem.children" [menuItem]="item"></app-menu-item>
+    </span>
+  </p>
+</div>
+
+<ng-template #finalItem>
+  <p>
+    <ion-button color="light" expand="full" (click)="onMenuItemSelected(menuItem)">
+      {{ menuItem.name }}
+    </ion-button>
+  </p>
+</ng-template> -->

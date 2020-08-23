@@ -1,0 +1,90 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>WhatsTik</ion-title>
+		<ion-buttons slot="start">
+			<ion-menu-button class="burger-menu" autoHide="false"></ion-menu-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<ion-content class="ion-text-center" [fullscreen]="true">
+
+	<button ion-button (click)="playVideo()">Play Video</button>
+	<ion-grid>
+		<ion-row class="ion-align-items-end">
+			<ion-col>
+			</ion-col>
+			<ion-col size="5" class="ion-align-self-start">
+				<!-- Data to display after skeleton screen -->
+				<div>
+					<ion-card>
+						<ion-card-header>
+							<ion-item-divider>
+								<ion-avatar slot="start">
+									<img
+										src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+								</ion-avatar>
+								<ion-label>
+									<h3>Lorem ipsum</h3>
+									<p>dolor sit amet</p>
+								</ion-label>
+							</ion-item-divider>
+						</ion-card-header>
+						<ion-card-content>
+							<div style="height: 600px;overflow: hidden;">
+								<ion-img src="https://cdn2.sharechat.com/dsFrame_2b936e57_1598094084119_02.jpg">
+								</ion-img>
+							</div>
+							<ion-list>
+								<ion-item *ngFor="let v of videos">
+									<ion-avatar slot="start">
+										<img [src]="v.thumb" />
+									</ion-avatar>
+									<ion-label>{{v.title}}</ion-label>
+									<ion-button slot="end" fill="clean" size="large" (click)="play(v.url)">
+										<ion-icon name="play-circle-outline"></ion-icon>
+									</ion-button>
+							
+								</ion-item>
+							
+							</ion-list>
+						</ion-card-content>
+					</ion-card>
+				</div>
+				<!-- Skeleton screen -->
+				<!-- <div *ngIf="!data">
+					<ion-card>
+						<ion-card-header>
+							<ion-item>
+								<ion-avatar slot="start">
+									<ion-skeleton-text animated></ion-skeleton-text>
+								</ion-avatar>
+								<ion-label>
+									<h3>
+										<ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+									</h3>
+									<p>
+										<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+									</p>
+								</ion-label>
+							</ion-item>
+						</ion-card-header>
+						<ion-card-content>
+							<div class="ion-padding custom-skeleton">
+								<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+								<ion-skeleton-text animated></ion-skeleton-text>
+								<ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+								<ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+								<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+							</div>
+						</ion-card-content>
+					</ion-card>
+				</div> -->
+			</ion-col>
+			<ion-col>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+
+
+</ion-content>
