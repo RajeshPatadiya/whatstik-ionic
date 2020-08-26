@@ -1,89 +1,396 @@
-<ion-header>
-	<ion-toolbar>
-		<ion-title>WhatsTik</ion-title>
-		<ion-buttons slot="start">
-			<ion-menu-button class="burger-menu" autoHide="false"></ion-menu-button>
-		</ion-buttons>
-	</ion-toolbar>
-</ion-header>
-<ion-content class="ion-text-center" [fullscreen]="true">
-
-	<button ion-button (click)="playVideo()">Play Video</button>
-	<ion-grid>
-		<ion-row class="ion-align-items-end">
-			<ion-col>
-			</ion-col>
-			<ion-col size="5" class="ion-align-self-start">
-				<!-- Data to display after skeleton screen -->
-				<div>
-					<ion-card>
-						<ion-card-header>
-							<ion-item-divider>
-								<ion-avatar slot="start">
-									<img
-										src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-								</ion-avatar>
-								<ion-label>
-									<h3>Lorem ipsum</h3>
-									<p>dolor sit amet</p>
-								</ion-label>
-							</ion-item-divider>
-						</ion-card-header>
-						<ion-card-content>
-							<div style="height: 600px;overflow: hidden;">
-								<ion-img src="https://cdn2.sharechat.com/dsFrame_2b936e57_1598094084119_02.jpg">
-								</ion-img>
-							</div>
-							<ion-list>
-								<ion-item *ngFor="let v of videos">
-									<ion-avatar slot="start">
-										<img [src]="v.thumb" />
-									</ion-avatar>
-									<ion-label>{{v.title}}</ion-label>
-									<ion-button slot="end" fill="clean" size="large" (click)="play(v.url)">
-										<ion-icon name="play-circle-outline"></ion-icon>
-									</ion-button>
-							
-								</ion-item>
-							
-							</ion-list>
-						</ion-card-content>
-					</ion-card>
+<ion-header #header>
+	<header
+		class="Pos(r) H(a) T(0) Start(0) W(100%) Z(50) Bxsh($bxshheader) Bgc($white) Trs($trstransform)  page-header">
+		<div class="Pos(r) Px($sm) D(f) Ai(c) Jc(sb)">
+			<div class="D(f) Ai(c)">
+				<ion-buttons slot="start">
+					<ion-menu-button class="burger-menu" autoHide="false"></ion-menu-button>
+				</ion-buttons>
+				<div class="H($2xl) Mstart($sm) D(f) Jc(c) Ai(c)">
+					<div class="D(if) Jc(c) Ai(c) Va(m) W($7xl) H($lg) active_Scale(1.15)  Trs($trsicon) ">
+						<img class="W(100%) D(ib) fitcover_Of(c) avatar_H(100%) "
+							src="http://www.whatstik.com/API/assets/images/watermark.png" alt="WhatsTik">
+					</div>
 				</div>
-				<!-- Skeleton screen -->
-				<!-- <div *ngIf="!data">
-					<ion-card>
-						<ion-card-header>
-							<ion-item>
-								<ion-avatar slot="start">
-									<ion-skeleton-text animated></ion-skeleton-text>
-								</ion-avatar>
-								<ion-label>
-									<h3>
-										<ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
-									</h3>
-									<p>
-										<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-									</p>
-								</ion-label>
-							</ion-item>
-						</ion-card-header>
-						<ion-card-content>
-							<div class="ion-padding custom-skeleton">
-								<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-								<ion-skeleton-text animated></ion-skeleton-text>
-								<ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-								<ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-								<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+			</div>
+			<div class="D(f) Ai(c)">
+				<div class="H($lg) "><a
+						class="Pos(r) D(f) Jc(c) Ai(c) Va(m) undefined M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  undefined W(100%) H(100%) "
+						aria-label="Click to see notification" href="/notificationModal?referrer=homePageTopNav">
+						<div class="D(f) Jc(c) Ai(c)  ">
+							<div class="D(if) Jc(c) Ai(c) Va(m) W($xl) H($xl) active_Scale(1.15)  Trs($trsicon) ">
+								<div class="W(100%) H(100%)  D(f) Jc(c) Ai(c)"><svg width="24" height="24"
+										viewBox="0 0 24 24" fill="none" class="Fill(cc) Fxg(1)">
+										<path
+											d="M13.863 19.5h-3.726a.208.208 0 0 0-.207.185 2.083 2.083 0 1 0 4.153.232c0-.078-.004-.155-.013-.232a.207.207 0 0 0-.207-.185zM19.872 18.063a13.637 13.637 0 0 1-1.455-6.11v-.64a7.595 7.595 0 0 0-3.222-6.351 5.315 5.315 0 0 0-1.945-.765V3.25a1.25 1.25 0 0 0-2.5 0v.957a5.615 5.615 0 0 0-2.376 1.065 7.667 7.667 0 0 0-2.79 6.041v.64a13.638 13.638 0 0 1-1.456 6.11.417.417 0 0 0 .372.604h15a.417.417 0 0 0 .372-.605v.001z"
+											fill="#4A4A59"></path>
+									</svg></div>
 							</div>
-						</ion-card-content>
-					</ion-card>
-				</div> -->
-			</ion-col>
-			<ion-col>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+						</div>
+					</a></div>
+				<div class="Mstart($sm) fade-enter-done"><button
+						class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P($xs) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc($primary) W(100%) H(100%) Bdrs($xxs) Fz($smd) Fw($fwtitle) C(white) "
+						aria-label="Add to Home Screen">
+						<div class="D(f) Jc(c) Ai(c)  ">INSTALL</div>
+					</button></div>
+			</div>
+		</div>
+		<div class="Pos(r) H($1xl)">
+			<div class="Pos(r) W(100%) H(100%)">
+				<div class="Pos(r) Ovx(a) H(100%) Maw(600px) M(a)">
+					<ul class="List(n) D(f) Ai(c) Jc(fs) W(a) H(100%)">
+						<li class="Pos(a) B(0) Start(0) W(100px) H(3px) Bdrs(2px) Bgc($primary) Trs($trstabslider)"
+							style="width: 92px; left: auto;"></li>
+						<li class="Fxs(0)"><a aria-current="page"
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption) active"
+								aria-label="Click to see પ્રખ્યાત" href="/trending"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">પ્રખ્યાત</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see કોરોના" href="/topic/corona-gujarati-1259"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">કોરોના</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see સમાચાર" href="/topic/news-gujarati-432"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સમાચાર</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see સિનેમા" href="/topic/cinema-gujarati-64"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સિનેમા</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see સ્પોર્ટ્સ" href="/topic/sports-gujarati-57"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સ્પોર્ટ્સ</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see પ્રેમ" href="/topic/love-gujarati-63"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">પ્રેમ</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see શુભકામના" href="/topic/wishes-gujarati-60"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">શુભકામના</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see વ્હોટ્સએપ" href="/topic/whatsapp-gujarati-287"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">વ્હોટ્સએપ</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see ભોજન" href="/topic/food-gujarati-526"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ભોજન</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see ભક્તિ" href="/topic/devotion-gujarati-59"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ભક્તિ</span></a>
+						</li>
+						<li class="Fxs(0)"><a
+								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
+								aria-label="Click to see ફેશન" href="/topic/fashion-gujarati-115"><span
+									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ફેશન</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+</ion-header>
+<ion-content class="ion-no-padding" scrollEvents="true" appHideHeader [header]="header">
+	<main id="main" class="Pos(r) M(a) " style="max-width: 600px;">
+		<div>
+			<div class="Pos(r) Z(1) Bgc($white3) Px($xxs) Py($sm)"><a class="D(b) Px($sm) Py($xms)"
+					href="/tag/0DQzw?referrer=trendingFeedPage">
+					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
+						<div
+							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
+							<div
+								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
+								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
+									💐
+								</div>
+							</div> શુભ મંગળવાર
+						</div>
+					</div>
+				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/zWb60E?referrer=trendingFeedPage">
+					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
+						<div
+							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
+							<div
+								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
+								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
+									😱
+								</div>
+							</div>મચ્છુ ડેમ 2 ઓવરફ્લો😲
+						</div>
+					</div>
+				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/8rROdM?referrer=trendingFeedPage">
+					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
+						<div
+							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
+							<div
+								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
+								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
+									😱
+								</div>
+							</div>નવા અંજલિભાભી😲
+						</div>
+					</div>
+				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/NyerbX?referrer=trendingFeedPage">
+					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
+						<div
+							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
+							<div
+								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
+								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
+									📰
+								</div>
+							</div> 25 ઓગસ્ટનાં સમાચાર
+						</div>
+					</div>
+				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/kVP7z?referrer=trendingFeedPage">
+					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
+						<div
+							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
+							<div
+								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
+								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
+									🙋‍♂️
+								</div>
+							</div> સોનાના ભાવમાં ભડકો
+						</div>
+					</div>
+				</a><a class="D(b) Px($sm) Py($xms)" href="/explore?referrer=trendingFeedPage">
+					<div
+						class="D(f) Ai(c) Pos(r) Py($xs) Pstart($3xl) Pend($2xl) Bgc($white) Bdrs($xs) Ov(h) Bxsh($bxshheader)">
+						<div class="Pos(a) T(0) Start(0) W($xxl) H($xxl) Bgc($blue3)">
+							<div
+								class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($fztitle) Lh($lhtitle) Fw($fwtitle) C($white)">
+								<div
+									class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon) Rotate(90deg)">
+									<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24" class="Fill($blue2) Fxg(1)">
+											<path
+												d="M12.354 7.283a.5.5 0 0 0-.708 0l-5.01 5.01a1 1 0 0 0 0 1.414l.087.086a1 1 0 0 0 1.414 0L12 9.93l3.863 3.863a1 1 0 0 0 1.414 0l.086-.086a1 1 0 0 0 0-1.414l-5.01-5.01z">
+											</path>
+										</svg></div>
+								</div>
+							</div>
+						</div>
+						<div class="Fxg(1) C($blue2) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading)">See
+							more
+						</div>
+					</div>
+				</a></div>
+		</div>
+		<div class="Pos(r) Trs($trstransform)" style="transform: translate3d(0px, 0px, 0px);">
+			<div class="infinite-list-wrapper">
+				<section class="post-batct">
+					<!-- Data to display after skeleton screen -->
+					<div *ngFor="let v of videos; let vdi = index">
+						<div class="Pb($xs)">
+							<div class="D(b) Px($md) Bgc($white) ">
+
+								<div class="Pos(r) Py($xs) Pend($xl)">
+									<a href="/profile/325065861?referer=trendingFeed" class="D(f) Ai(c) Pend($xxs) ">
+										<img alt="Aravind Thakor - Author on WhatsTik: Funny, Romantic, Videos, Shayari, Quotes"
+											src="https://cdngoogle.sharechat.com/ProfilePic/9bb040b_1595072354799_thumbnail_v2.jpeg"
+											data-src="https://cdngoogle.sharechat.com/ProfilePic/9bb040b_1595072354799_thumbnail_v2.jpeg"
+											class="W($xxl) H($xxl) Us(n) Of(c) Bgc($white4) Bdrs(50%) Fxs(0) lazyloaded">
+										<div class="H(100%) Pstart($xs) Fxg(1) Miw(0)">
+											<div class="H(100%) Ta(start) D(f) Jc(c) Ai(fs) Fxd(c)">
+												<div class="D(f) Ai(c) W(100%)">
+													<strong
+														class="Whs(nw) Ovx(h) Tov(e) Maw(100%) Fz($fzbutton) Lh($lhmediumCaption) Fw(600) C($darkText) Whs(nw) Ovx(h) Tov(e) Maw(100%)">
+														Rajesh P
+													</strong>
+												</div>
+												<div
+													class="Fz($fzcaption) Lh($lhcaption) C($darkTextSecondary) Whs(nw) Ovx(h) Tov(e) Maw(100%) Mt($3xs)">
+													<div class="D(f)">
+														<div>200.5K એ જોયું</div>
+														<div class="Px($xxs)">•</div>
+														<div>1 દિવસ પહેલા</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</a>
+									<div class="Pos(a) T(50%) TranslateY(-50%) D(f) Ai(c) End($nxxs)">
+										<a class="Pos(r) D(f) Jc(c) Ai(c) Va(m) undefined M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  undefined W(100%) H(100%) W($xl) H($xl)"
+											aria-label="Click for more options" href="/shareModal?referer=trendingFeed">
+											<div
+												class="D(f) Jc(c) Ai(c)  P($xxs) Bgc($white3):h transparent_Bgc($darkDivider):h Bdrs(50%) Ov(h)">
+												<div
+													class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15) avatar Bdrs(50%) Ov(h) Trs($trsicon) C($darkTextSecondary)">
+													<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24"
+															class="Fill(cc) Fxg(1)">
+															<path
+																d="M12 16c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z">
+															</path>
+														</svg></div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<a class="D(b) Mx($nmd)">
+									<div class="Pos(r) Ov(h)">
+										<div class="Pos(r) W(100%) Bgc($white3)" style="padding-bottom: 100%;">
+											<div class="Pos(a) Start(0) W(100%) T(0) H(100%)">
+
+												<vg-player (onPlayerReady)="onPlayerReady($event,vdi)">
+													<vg-overlay-play></vg-overlay-play>
+													<vg-controls [vgFor]="post_id">
+														<vg-playback-button
+															[playbackValues]="['0.5', '1.0', '1.5','2.0' ]">
+														</vg-playback-button>
+														<vg-mute></vg-mute>
+													</vg-controls>
+													<video [vgMedia]="media" #media [attr.id]="post_id" class="video"
+														inViewport
+														[inViewportOptions]="{ partial: false, thresold:[0.8] }"
+														(inViewportAction)="onIntersection($event,vdi)" [src]="v.url"
+														poster="https://cdn.sharechat.com/1cd04250_1598158293564_keyframe_01_05.jpg"
+														type="video/mp4" preload="none"
+														class="Us(n) Of(c) post-media Pos(a) Start(0) W(100%) T(0) H(100%)"
+														loop="" playsinline="">Your browser does not
+														support the
+														video
+														tag.</video>
+												</vg-player>
+												<!-- <div
+														class="Pos(a) Start(0) W(100%) T(0) H(100%) Bgc($modal) fade-enter-done">
+														<div
+															class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) W($4xl) H($4xl) C($white)">
+															<div class="W(100%) H(100%) "><svg viewBox="0 0 48 48"
+																	class="Fill(cc) Fxg(1)">
+																	<path
+																		d="M39.3 8.7C35.4 4.8 22 3.6 13.5 6.2c-2.2.7-3.8 1.5-4.8 2.5-1.2 1.2-2.2 3.3-2.9 6.2-.7 2.7-1 5.9-1 9.1 0 3.3.4 6.5 1 9.2.7 2.8 1.7 4.9 2.9 6.1 5.2 5.2 25.4 5.2 30.6 0 1.2-1.2 2.2-3.3 2.9-6.1.7-2.7 1-5.9 1-9.1 0-3.2-.4-6.5-1-9.2-.7-2.9-1.7-5-2.9-6.2m2-2c1.6 1.6 2.8 4.2 3.6 7.4.7 2.9 1.1 6.4 1.1 9.9s-.4 6.9-1.1 9.8c-.8 3.3-2 5.8-3.6 7.5-6.3 6.3-28.2 6.3-34.5 0-1.6-1.6-2.8-4.2-3.6-7.4C2.4 31 2 27.5 2 24s.4-6.9 1.1-9.8c.8-3.3 2-5.9 3.6-7.5 1.3-1.3 3.4-2.4 5.9-3.2C22.1.6 36.5 1.9 41.3 6.7M16 14v20l17-10-17-10z">
+																	</path>
+																</svg></div>
+														</div>
+													</div> -->
+												<div
+													class="Pos(a) B(0) End(0) P($xs) Fz($sm) Lh($lhcaption) Fw(500) C(white) text-shadow">
+													<span>00:14 / 1 MB</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>
+								<div class="Ov(h)">
+									<div class="Py($xs) Whs(pw) Wow(bw) C($darkText) Fz($fzbutton)"><span
+											class="Pend($xxs) C($primary) Fw(600)">#📱
+											ગુજરાતી સ્ટેટ્સ</span> <span class="Pend($xxs) C($primary) Fw(600)">#🎶
+											ગુજરાતી ગીતો</span> <span class="Pend($xxs) C($primary) Fw(600)">#ઠાકોર
+											ઠાકોરની રીતે વાલા</span></div>
+								</div>
+								<div class="D(f) Jc(sb) W(100%) Py($xs)">
+									<div class="D(f) Ai(c) Fxg(1)">
+										<div class="D(f) W(100%) Fxg(1)">
+											<div class="D(f) W(100%) Fxg(1)"><button
+													class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t)  C($darkTextSecondary)"
+													aria-label="Click to share">
+													<div class="D(f) Jc(c) Ai(c)  ">
+														<div
+															class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon) undefined blink-light">
+															<img class="W(100%) D(ib) fitcover_Of(c) avatar_H(100%) "
+																src="/assets/svg/social/whatsapp.svg" alt="શેર">
+														</div>
+														<span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">2.2K</span>
+													</div>
+												</button></div>
+										</div>
+										<div class="D(f) W(100%) Fxg(1)"><button
+												class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t)  C($darkTextSecondary)"
+												aria-label="Click to like">
+												<div class="D(f) Jc(c) Ai(c)  ">
+													<div
+														class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon)  ">
+														<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24"
+																class="Fill(cc) Fxg(1)">
+																<path
+																	d="M15.1 4.9c-.1 0-.3 0-.4.1v-.4c0-.5-.3-1-.7-1.4-.4-.3-.9-.5-1.5-.5-.4 0-.8.2-1.1.4-.2-.5-.6-.8-1-1-.5-.1-1-.2-1.5 0-.2.1-.4.2-.6.4s-.4.4-.5.6c-.2.5-.3 1-.1 1.5l1.1 3.2c-1.4.3-2.6.9-3.6 1.9l-.2.2c-.4.4-.5.9-.5 1.4s.2 1 .5 1.4c-.5 0-1 .2-1.4.6-.4.3-.6.8-.6 1.3v.2c0 1.8.7 3.6 1.9 4.9s2.9 2.1 4.7 2.2 3.6-.5 4.9-1.7c1.4-1.2 2.3-2.8 2.5-4.6V7c0-.5-.2-1.1-.5-1.5-.4-.4-.9-.6-1.4-.6zm.4 10.6c-.2 1.4-.9 2.8-2 3.7s-2.5 1.4-4 1.2c-1.4-.2-2.7-.8-3.6-1.9S4.5 16 4.5 14.6c0-.1.1-.2.2-.3.2-.2.4-.2.6 0 .1.1.1.2.2.3v.1c0 1 .4 2 1.1 2.7 1.4 1.6 3.7 1.8 5.4.5.8-.6 1.4-1.5 1.5-2.5.1-.3.1-.5.1-.8v-.1c0-.9-.4-1.8-1-2.6-.4-.4-.8-.8-1.3-1-.5-.3-1.1-.4-1.8-.4-1 0-1.9.4-2.7 1l-.1.1c-.1 0-.2.1-.3.1s-.2-.1-.3-.1c-.1-.1-.1-.2-.1-.4 0-.1 0-.2.1-.3l.1-.1c1-1 2.3-1.5 3.6-1.6h1l-1.7-5v-.3c.1-.1.1-.2.3-.2h.4c.1 0 .2.1.2.2L12 9s0 .1.1.1h.2V9l-.1-4.1c0-.1 0-.2.1-.3s.2-.2.3-.2.2 0 .3.1.2.2.2.3l.3 4.3v.1h.1l1.1-2.4c.1-.2.2-.3.4-.3.1 0 .2.1.3.1.1.1.1.2.1.3zm-9.1-2.3c.5 0 1-.2 1.3-.5l.2-.1c.8-.6 1.8-.7 2.7-.3.3.1.6.4.8.6.4.5.6 1.1.6 1.7 0 .2 0 .3-.1.5-.1.6-.4 1.1-.9 1.5-.4.4-1 .6-1.6.6-.7 0-1.3-.3-1.8-.8-.4-.4-.6-1.1-.6-1.8v-.1c-.1-.4-.2-.9-.6-1.3z">
+																</path>
+															</svg></div>
+													</div><span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">5.1K</span>
+												</div>
+											</button></div>
+										<div class="D(f) W(100%) Fxg(1)"><button
+												class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t)  C($darkTextSecondary)"
+												aria-label="Click to comment">
+												<div class="D(f) Jc(c) Ai(c)  ">
+													<div
+														class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon)  ">
+														<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24"
+																class="Fill(cc) Fxg(1)">
+																<path
+																	d="M3 21H2a1 1 0 0 0 1.514.858L3 21zm5-9a1 1 0 1 0 0 2v-2zm8 2a1 1 0 1 0 0-2v2zM8 8a1 1 0 0 0 0 2V8zm8 2a1 1 0 1 0 0-2v2zm-8.95 8.57l-.515-.858.515.858zM6 5h12V3H6v2zm14 2v8h2V7h-2zm-2 10H9.108v2H18v-2zm-11.465.712l-4.05 2.43 1.03 1.716 4.05-2.43-1.03-1.716zM4 21V7H2v14h2zm4-7h8v-2H8v2zm0-4h8V8H8v2zm1.108 7a5 5 0 0 0-2.573.712l1.03 1.715A3 3 0 0 1 9.107 19v-2zM20 15a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4h-2zM18 5a2 2 0 0 1 2 2h2a4 4 0 0 0-4-4v2zM6 3a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2V3z">
+																</path>
+															</svg></div>
+													</div><span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">25</span>
+												</div>
+											</button></div>
+									</div>
+									<div class="D(f) Ai(c) Fxs(0) Mstart($md)"><button
+											class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t) W(100%) H(100%) W(a) Fxg(1) C($darkTextSecondary)"
+											aria-label="Click to download">
+											<div class="D(f) Jc(c) Ai(c)  ">
+												<div
+													class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon) ">
+													<div class="W(100%) H(100%)  "><svg width="24" height="24"
+															viewBox="0 0 24 24" class="Fill(cc) Fxg(1)">
+															<path
+																d="M9.492 4.104c0-.293.122-.574.34-.78A1.19 1.19 0 0 1 10.65 3h2.703c.307 0 .602.117.819.324.217.207.339.487.34.78v6.245c0 .05.02.099.058.134a.204.204 0 0 0 .14.056h2.312c.19-.014.381.03.545.125.163.095.29.238.363.406a.826.826 0 0 1 .044.532.858.858 0 0 1-.293.455l-4.862 4.63c-.22.201-.514.313-.82.313-.304 0-.598-.112-.819-.313l-4.861-4.63a.858.858 0 0 1-.295-.455.825.825 0 0 1 .044-.533.876.876 0 0 1 .364-.406.943.943 0 0 1 .546-.124H9.29a.207.207 0 0 0 .141-.055.189.189 0 0 0 .058-.135l.003-6.245zM20.722 16.244l-.542.594.542-.594zm-16.804.622l.071.002-.07-.002zM4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1">
+															</path>
+														</svg></div>
+												</div>
+											</div>
+										</button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Skeleton screen -->
+					<!-- <div *ngIf="!data">
+						<ion-card>
+							<ion-card-header>
+								<ion-item>
+									<ion-avatar slot="start">
+										<ion-skeleton-text animated></ion-skeleton-text>
+									</ion-avatar>
+									<ion-label>
+										<h3>
+											<ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+										</h3>
+										<p>
+											<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+										</p>
+									</ion-label>
+								</ion-item>
+							</ion-card-header>
+							<ion-card-content>
+								<div class="ion-padding custom-skeleton">
+									<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+									<ion-skeleton-text animated></ion-skeleton-text>
+									<ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+									<ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+									<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+								</div>
+							</ion-card-content>
+						</ion-card>
+					</div> -->
+				</section>
+			</div>
+		</div>
+	</main>
 
 
 

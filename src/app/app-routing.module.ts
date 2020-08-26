@@ -17,8 +17,16 @@ const routes: Routes = [
   },
   {
     path: 'videos',
-    loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
-  }
+    loadChildren: () => import('./videos/videos.module').then(m => m.VideosPageModule)
+  },
+  {
+    path: 'embedded',
+    loadChildren: () => import('./embedded/embedded.module').then(m => m.EmbeddedPageModule)
+  },
+  {
+    path: 'fullscreen',
+    loadChildren: () => import('./fullscreen/fullscreen.module').then(m => m.FullscreenPageModule)
+  },
 ];
 
 @NgModule({

@@ -16,6 +16,14 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { VideoPlayer } from '@ionic-native/video-player/ngx';
+
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
+import { VgControlsModule } from '@videogular/ngx-videogular/controls';
+import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
+import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+
+import { InViewportModule } from 'ng-in-viewport';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -36,6 +44,11 @@ import { VideoPlayer } from '@ionic-native/video-player/ngx';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }), // ToastrModule added
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    InViewportModule
   ],
   providers: [
     StatusBar,

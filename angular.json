@@ -33,13 +33,16 @@
             ],
             "styles": [
               {
+                "input": "node_modules/@videogular/ngx-videogular/fonts/videogular.css"
+              },
+              {
                 "input": "src/theme/variables.scss"
               },
               {
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {
