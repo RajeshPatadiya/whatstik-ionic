@@ -43,7 +43,7 @@ const routes: Routes = [
 					{
 						path: '',
 						loadChildren: () =>
-							import('../about/about.module').then(m => m.AboutPageModule)
+							import('../profile/profile.module').then(m => m.ProfilePageModule)
 					}
 				]
 			},

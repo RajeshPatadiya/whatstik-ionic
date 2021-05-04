@@ -1,0 +1,65 @@
+<app-common-header></app-common-header>
+
+<ion-content class="ion-no-padding" scrollEvents="true">
+  <main id="main" class="Pos(r) M(a)" style="max-width: 600px;">
+    <div class="Pos(r) Trs($trstransform)" style="transform: translate3d(0px, 0px, 0px);">
+      <div class="infinite-list-wrapper">
+        <section class="post-batct">
+
+          <!-- Skeleton screen -->
+          <div *ngIf="!data">
+            <ion-card *ngFor="let i of [1,2,3,4]">
+              <ion-card-header>
+                <ion-item>
+                  <ion-avatar slot="start">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                  </ion-avatar>
+                  <ion-label>
+                    <h3>
+                      <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                    </h3>
+                    <p>
+                      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                    </p>
+                  </ion-label>
+                  <ion-buttons slot="end">
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                  </ion-buttons>
+                </ion-item>
+              </ion-card-header>
+              <ion-card-content>
+                <div class="ion-padding custom-skeleton">
+                  <ion-img slot="start">
+                    <ion-skeleton-text animated style="height: 200px;"></ion-skeleton-text>
+                  </ion-img>
+                  <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                  <ion-skeleton-text animated></ion-skeleton-text>
+                  <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+                </div>
+                <ion-label class="ion-justify-content-center">
+                  <ion-grid>
+                    <ion-row class="ion-align-items-center">
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+                      </ion-col>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+                      </ion-col>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+                      </ion-col>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-label>
+              </ion-card-content>
+            </ion-card>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+</ion-content>

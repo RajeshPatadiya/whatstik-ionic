@@ -12,6 +12,14 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
+			<ion-list id="home-list">
+				<ion-menu-toggle auto-hide="false">
+					<ion-item [routerLink]="['/discover/home']" lines="none"
+							  detail="false">
+						<ion-icon name="home"></ion-icon>&nbsp;&nbsp;<ion-label>Home</ion-label>
+					</ion-item>
+				</ion-menu-toggle>
+			</ion-list>
 			<ion-list id="inbox-list">
 				<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
 					<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"

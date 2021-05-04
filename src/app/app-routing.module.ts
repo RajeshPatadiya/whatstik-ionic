@@ -27,6 +27,42 @@ const routes: Routes = [
     path: 'fullscreen',
     loadChildren: () => import('./fullscreen/fullscreen.module').then(m => m.FullscreenPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'trends',
+    loadChildren: () => import('./trends/trends.module').then( m => m.TrendsPageModule)
+  },
+  {
+    path: 'trending',
+    loadChildren: () => import('./trends/trends.module').then( m => m.TrendsPageModule)
+  },
+  {
+    path: 'privacy-policy',
+    loadChildren: () => import('./privacy-policy/privacy-policy.module').then( m => m.PrivacyPolicyPageModule)
+  },
+  {
+    path: 'content-policy',
+    loadChildren: () => import('./content-policy/content-policy.module').then( m => m.ContentPolicyPageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+  },
+  {
+    path: 'terms-and-conditions',
+    loadChildren: () => import('./terms-and-conditions/terms-and-conditions.module').then( m => m.TermsAndConditionsPageModule)
+  },
+  {
+    path: 'topic/:id',
+    loadChildren: () => import('./topic/topic.module').then( m => m.TopicPageModule)
+  },
 ];
 
 @NgModule({

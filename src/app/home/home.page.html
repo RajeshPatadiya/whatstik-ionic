@@ -1,193 +1,90 @@
-<ion-header #header>
-	<header
-		class="Pos(r) H(a) T(0) Start(0) W(100%) Z(50) Bxsh($bxshheader) Bgc($white) Trs($trstransform)  page-header">
-		<div class="Pos(r) Px($sm) D(f) Ai(c) Jc(sb)">
-			<div class="D(f) Ai(c)">
-				<ion-buttons slot="start">
-					<ion-menu-button class="burger-menu" autoHide="false"></ion-menu-button>
-				</ion-buttons>
-				<div class="H($2xl) Mstart($sm) D(f) Jc(c) Ai(c)">
-					<div class="D(if) Jc(c) Ai(c) Va(m) W($7xl) H($lg) active_Scale(1.15)  Trs($trsicon) ">
-						<img class="W(100%) D(ib) fitcover_Of(c) avatar_H(100%) "
-							src="http://www.whatstik.com/API/assets/images/watermark.png" alt="WhatsTik">
-					</div>
-				</div>
-			</div>
-			<div class="D(f) Ai(c)">
-				<div class="H($lg) "><a
-						class="Pos(r) D(f) Jc(c) Ai(c) Va(m) undefined M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  undefined W(100%) H(100%) "
-						aria-label="Click to see notification" href="/notificationModal?referrer=homePageTopNav">
-						<div class="D(f) Jc(c) Ai(c)  ">
-							<div class="D(if) Jc(c) Ai(c) Va(m) W($xl) H($xl) active_Scale(1.15)  Trs($trsicon) ">
-								<div class="W(100%) H(100%)  D(f) Jc(c) Ai(c)"><svg width="24" height="24"
-										viewBox="0 0 24 24" fill="none" class="Fill(cc) Fxg(1)">
-										<path
-											d="M13.863 19.5h-3.726a.208.208 0 0 0-.207.185 2.083 2.083 0 1 0 4.153.232c0-.078-.004-.155-.013-.232a.207.207 0 0 0-.207-.185zM19.872 18.063a13.637 13.637 0 0 1-1.455-6.11v-.64a7.595 7.595 0 0 0-3.222-6.351 5.315 5.315 0 0 0-1.945-.765V3.25a1.25 1.25 0 0 0-2.5 0v.957a5.615 5.615 0 0 0-2.376 1.065 7.667 7.667 0 0 0-2.79 6.041v.64a13.638 13.638 0 0 1-1.456 6.11.417.417 0 0 0 .372.604h15a.417.417 0 0 0 .372-.605v.001z"
-											fill="#4A4A59"></path>
-									</svg></div>
-							</div>
-						</div>
-					</a></div>
-				<div class="Mstart($sm) fade-enter-done"><button
-						class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P($xs) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc($primary) W(100%) H(100%) Bdrs($xxs) Fz($smd) Fw($fwtitle) C(white) "
-						aria-label="Add to Home Screen">
-						<div class="D(f) Jc(c) Ai(c)  ">INSTALL</div>
-					</button></div>
-			</div>
-		</div>
-		<div class="Pos(r) H($1xl)">
-			<div class="Pos(r) W(100%) H(100%)">
-				<div class="Pos(r) Ovx(a) H(100%) Maw(600px) M(a)">
-					<ul class="List(n) D(f) Ai(c) Jc(fs) W(a) H(100%)" style="padding-left: 0;">
-						<li class="Pos(a) B(0) Start(0) W(100px) H(3px) Bdrs(2px) Bgc($primary) Trs($trstabslider)"
-							style="width: 92px; left: auto;"></li>
-						<li class="Fxs(0)"><a aria-current="page"
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption) active"
-								aria-label="Click to see પ્રખ્યાત" href="/trending"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">પ્રખ્યાત</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see કોરોના" href="/topic/corona-gujarati-1259"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">કોરોના</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see સમાચાર" href="/topic/news-gujarati-432"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સમાચાર</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see સિનેમા" href="/topic/cinema-gujarati-64"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સિનેમા</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see સ્પોર્ટ્સ" href="/topic/sports-gujarati-57"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">સ્પોર્ટ્સ</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see પ્રેમ" href="/topic/love-gujarati-63"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">પ્રેમ</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see શુભકામના" href="/topic/wishes-gujarati-60"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">શુભકામના</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see વ્હોટ્સએપ" href="/topic/whatsapp-gujarati-287"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">વ્હોટ્સએપ</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see ભોજન" href="/topic/food-gujarati-526"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ભોજન</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see ભક્તિ" href="/topic/devotion-gujarati-59"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ભક્તિ</span></a>
-						</li>
-						<li class="Fxs(0)"><a
-								class="Pos(r) D(f) Jc(c) Ai(c) H(100%) Px($lg) Ta(c) Tt(u) Fz($fzbutton) Lh($lhmediumCaption)"
-								aria-label="Click to see ફેશન" href="/topic/fashion-gujarati-115"><span
-									class="C($darkTextSecondary) active_C($darkText) active_Fw($fwbutton)">ફેશન</span></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-</ion-header>
-<ion-content class="ion-no-padding" scrollEvents="true" appHideHeader [header]="header">
+<app-common-header></app-common-header>
+<ion-content class="ion-no-padding" scrollEvents="true">
 	<main id="main" class="Pos(r) M(a)" style="max-width: 600px;">
-		<div>
-			<div class="Pos(r) Z(1) Bgc($white3) Px($xxs) Py($sm)"><a class="D(b) Px($sm) Py($xms)"
-					href="/tag/0DQzw?referrer=trendingFeedPage">
-					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
-						<div
-							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
-							<div
-								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
-								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
-									💐
-								</div>
-							</div> શુભ મંગળવાર
-						</div>
-					</div>
-				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/zWb60E?referrer=trendingFeedPage">
-					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
-						<div
-							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
-							<div
-								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
-								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
-									😱
-								</div>
-							</div>મચ્છુ ડેમ 2 ઓવરફ્લો😲
-						</div>
-					</div>
-				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/8rROdM?referrer=trendingFeedPage">
-					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
-						<div
-							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
-							<div
-								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
-								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
-									😱
-								</div>
-							</div>નવા અંજલિભાભી😲
-						</div>
-					</div>
-				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/NyerbX?referrer=trendingFeedPage">
-					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
-						<div
-							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
-							<div
-								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
-								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
-									📰
-								</div>
-							</div> 25 ઓગસ્ટનાં સમાચાર
-						</div>
-					</div>
-				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/kVP7z?referrer=trendingFeedPage">
-					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">
-						<div
-							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">
-							<div
-								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">
-								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">
-									🙋‍♂️
-								</div>
-							</div> સોનાના ભાવમાં ભડકો
-						</div>
-					</div>
-				</a><a class="D(b) Px($sm) Py($xms)" href="/explore?referrer=trendingFeedPage">
-					<div
-						class="D(f) Ai(c) Pos(r) Py($xs) Pstart($3xl) Pend($2xl) Bgc($white) Bdrs($xs) Ov(h) Bxsh($bxshheader)">
-						<div class="Pos(a) T(0) Start(0) W($xxl) H($xxl) Bgc($blue3)">
-							<div
-								class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($fztitle) Lh($lhtitle) Fw($fwtitle) C($white)">
-								<div
-									class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon) Rotate(90deg)">
-									<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24" class="Fill($blue2) Fxg(1)">
-											<path
-												d="M12.354 7.283a.5.5 0 0 0-.708 0l-5.01 5.01a1 1 0 0 0 0 1.414l.087.086a1 1 0 0 0 1.414 0L12 9.93l3.863 3.863a1 1 0 0 0 1.414 0l.086-.086a1 1 0 0 0 0-1.414l-5.01-5.01z">
-											</path>
-										</svg></div>
-								</div>
-							</div>
-						</div>
-						<div class="Fxg(1) C($blue2) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading)">See
-							more
-						</div>
-					</div>
-				</a></div>
-		</div>
+<!--		<div>-->
+<!--			<div class="Pos(r) Z(1) Bgc($white3) Px($xxs) Py($sm)"><a class="D(b) Px($sm) Py($xms)"-->
+<!--					href="/tag/0DQzw?referrer=trendingFeedPage">-->
+<!--					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">-->
+<!--						<div-->
+<!--							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">-->
+<!--							<div-->
+<!--								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">-->
+<!--								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">-->
+<!--									💐-->
+<!--								</div>-->
+<!--							</div> શુભ મંગળવાર-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/zWb60E?referrer=trendingFeedPage">-->
+<!--					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">-->
+<!--						<div-->
+<!--							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">-->
+<!--							<div-->
+<!--								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">-->
+<!--								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">-->
+<!--									😱-->
+<!--								</div>-->
+<!--							</div>મચ્છુ ડેમ 2 ઓવરફ્લો😲-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/8rROdM?referrer=trendingFeedPage">-->
+<!--					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">-->
+<!--						<div-->
+<!--							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">-->
+<!--							<div-->
+<!--								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">-->
+<!--								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">-->
+<!--									😱-->
+<!--								</div>-->
+<!--							</div>નવા અંજલિભાભી😲-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/NyerbX?referrer=trendingFeedPage">-->
+<!--					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">-->
+<!--						<div-->
+<!--							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">-->
+<!--							<div-->
+<!--								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">-->
+<!--								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">-->
+<!--									📰-->
+<!--								</div>-->
+<!--							</div> 25 ઓગસ્ટનાં સમાચાર-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a><a class="D(b) Px($sm) Py($xms)" href="/tag/kVP7z?referrer=trendingFeedPage">-->
+<!--					<div class="D(f) Ai(c) Pos(r) Bgc($white) Ov(h) Bxsh($bxshheader) Bdrs($xxs) ">-->
+<!--						<div-->
+<!--							class="W(100%) Pstart($3xl) Py($xs) Pos(r) D(f) C($darkText) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading) Pend($2xl)">-->
+<!--							<div-->
+<!--								class="Pos(a) Start(0) Pos(a) T(50%) TranslateY(-50%)  W($xxl) H(100%) Bgc($lightGrey) ">-->
+<!--								<div class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($lg) C($primary)">-->
+<!--									🙋‍♂️-->
+<!--								</div>-->
+<!--							</div> સોનાના ભાવમાં ભડકો-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a><a class="D(b) Px($sm) Py($xms)" href="/explore?referrer=trendingFeedPage">-->
+<!--					<div-->
+<!--						class="D(f) Ai(c) Pos(r) Py($xs) Pstart($3xl) Pend($2xl) Bgc($white) Bdrs($xs) Ov(h) Bxsh($bxshheader)">-->
+<!--						<div class="Pos(a) T(0) Start(0) W($xxl) H($xxl) Bgc($blue3)">-->
+<!--							<div-->
+<!--								class="Pos(a) T(50%) Start(50%) Translate(-50%,-50%) Fz($fztitle) Lh($lhtitle) Fw($fwtitle) C($white)">-->
+<!--								<div-->
+<!--									class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon) Rotate(90deg)">-->
+<!--									<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24" class="Fill($blue2) Fxg(1)">-->
+<!--											<path-->
+<!--												d="M12.354 7.283a.5.5 0 0 0-.708 0l-5.01 5.01a1 1 0 0 0 0 1.414l.087.086a1 1 0 0 0 1.414 0L12 9.93l3.863 3.863a1 1 0 0 0 1.414 0l.086-.086a1 1 0 0 0 0-1.414l-5.01-5.01z">-->
+<!--											</path>-->
+<!--										</svg></div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="Fxg(1) C($blue2) Fw($fwsubheading) Fz($fzsubheading) Lh($lhsubheading)">See-->
+<!--							more-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</a></div>-->
+<!--		</div>-->
 		<div class="Pos(r) Trs($trstransform)" style="transform: translate3d(0px, 0px, 0px);">
 			<div class="infinite-list-wrapper">
 				<section class="post-batct">
@@ -359,8 +256,8 @@
 						</div>
 					</div>
 					<!-- Skeleton screen -->
-					<!-- <div *ngIf="!data">
-						<ion-card>
+					<div *ngIf="!videos">
+						<ion-card *ngFor="let i of [1,2,3,4]">
 							<ion-card-header>
 								<ion-item>
 									<ion-avatar slot="start">
@@ -374,19 +271,41 @@
 											<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
 										</p>
 									</ion-label>
+									<ion-buttons slot="end">
+										<ion-skeleton-text animated></ion-skeleton-text>
+									</ion-buttons>
 								</ion-item>
 							</ion-card-header>
 							<ion-card-content>
 								<div class="ion-padding custom-skeleton">
+									<ion-img slot="start">
+										<ion-skeleton-text animated style="height: 200px;"></ion-skeleton-text>
+									</ion-img>
 									<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
 									<ion-skeleton-text animated></ion-skeleton-text>
 									<ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
-									<ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
-									<ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
 								</div>
+								<ion-label class="ion-justify-content-center">
+									<ion-grid>
+										<ion-row class="ion-align-items-center">
+											<ion-col>
+												<ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+											</ion-col>
+											<ion-col>
+												<ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+											</ion-col>
+											<ion-col>
+												<ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+											</ion-col>
+											<ion-col>
+												<ion-skeleton-text animated style="width: 20%;height: 20%;"></ion-skeleton-text>
+											</ion-col>
+										</ion-row>
+									</ion-grid>
+								</ion-label>
 							</ion-card-content>
 						</ion-card>
-					</div> -->
+					</div>
 				</section>
 			</div>
 		</div>

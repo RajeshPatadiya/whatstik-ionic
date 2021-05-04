@@ -20,18 +20,20 @@ import { InViewportModule } from 'ng-in-viewport';
 import 'intersection-observer';
 
 import { HideHeaderDirective } from '../directives/hide-header.directive';
+import {TopicPageModule} from '../topic/topic.module';
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    VgCoreModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule,
-    InViewportModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule,
+        VgCoreModule,
+        VgControlsModule,
+        VgOverlayPlayModule,
+        VgBufferingModule,
+        InViewportModule,
+        TopicPageModule
+    ],
   exports: [HideHeaderDirective],
   declarations: [HomePage, HideHeaderDirective]
 })
