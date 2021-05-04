@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   siteName: 'WhatsTik',
-  API_BASE_URL: "http://localhost:2000/app/api/v1"
+  API_BASE_URL: "http://192.168.168.157:2000/app/api/v2"
 };
 
 /*

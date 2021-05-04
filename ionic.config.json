@@ -1,7 +1,16 @@
 {
-  "name": "whatstik",
+  "name": "WhatsTik",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/app/api/v2",
+      "proxyUrl": "http://192.168.168.157"
+    }
+  ],
+  "id": "com.patadiyainfotech.whatstik"
 }

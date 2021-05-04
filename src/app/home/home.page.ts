@@ -12,6 +12,8 @@ const { CapacitorVideoPlayer, Device } = Plugins;
 
 import { VgApiService } from '@videogular/ngx-videogular/core';
 import { visitAll } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
+import { HomeService } from '../services/home.service';
 declare var $: any;
 
 @Component({
@@ -41,30 +43,31 @@ export class HomePage implements OnInit {
 
 	preload: string = 'auto';
 	api: VgApiService;
-	constructor(private menu: MenuController, private renderer: Renderer2) {
-		this.videos = [
-			{
-				post_id: 1,
-				url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-				subtitle: "By Blender Foundation",
-				thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
-				title: "Big Buck Bunny"
-			},
-			{
-				post_id: 2,
-				url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-				subtitle: "By Blender Foundation",
-				thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-				title: "Elephant Dream"
-			},
-			{
-				post_id: 3,
-				url: "https://cdn.sharechat.com/171ca99f_1597724210354_c_v__5ff42c3b-5c41-4dc2-a011-ef5a847aa5ab.mp4",
-				subtitle: "By Blender Foundation",
-				thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-				title: "Elephant Dream"
-			}
-		];
+	error: any;
+	constructor(private toastr: ToastrService, private homeService: HomeService, private menu: MenuController, private renderer: Renderer2) {
+		// this.videos = [
+		// 	{
+		// 		post_id: 1,
+		// 		url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+		// 		subtitle: "By Blender Foundation",
+		// 		thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+		// 		title: "Big Buck Bunny"
+		// 	},
+		// 	{
+		// 		post_id: 2,
+		// 		url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+		// 		subtitle: "By Blender Foundation",
+		// 		thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+		// 		title: "Elephant Dream"
+		// 	},
+		// 	{
+		// 		post_id: 3,
+		// 		url: "https://cdn.sharechat.com/171ca99f_1597724210354_c_v__5ff42c3b-5c41-4dc2-a011-ef5a847aa5ab.mp4",
+		// 		subtitle: "By Blender Foundation",
+		// 		thumb: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+		// 		title: "Elephant Dream"
+		// 	}
+		// ];
 	}
 
 	async ngOnInit() {
@@ -79,6 +82,29 @@ export class HomePage implements OnInit {
 		this._url = "https://whatstik.s3.amazonaws.com/upload/video/1598254471_1486282717.mp4"
 		// add listeners to the plugin
 		this._addListenersToPlayerPlugin();
+
+		/**
+		 * Load sidebar Menu
+		*/
+		let data = {
+			"fb_id": "112448377553298448905"
+		}
+		this.homeService.showAllVideos(data).subscribe(async (response) => {
+			if (response['status'] == 0) {
+				this.toastr.error('There are no videos available', 'No videos Found', {
+					disableTimeOut: true
+				});
+			}
+			this.videos = response['data'];
+		}, error => {
+			this.error = error;
+		});
+
+	}
+	
+	likeAction(e) {
+		const target: HTMLElement = e.target;
+		target.classList.toggle('is-active');
 	}
 
 	public onIntersection({ target, visible }: { target: HTMLVideoElement; visible: boolean }, vdi: any): void {
@@ -94,7 +120,6 @@ export class HomePage implements OnInit {
 			() => {
 				// Set the video to the beginning
 				this.api.getDefaultMedia().currentTime = 0;
-				this.api.volume = 0;
 				console.log("ready ", this.api.getDefaultMedia());
 			}
 		);

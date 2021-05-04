@@ -39,6 +39,9 @@
                 "input": "src/theme/variables.scss"
               },
               {
+                "input": "src/assets/css/animations.css"
+              },
+              {
                 "input": "src/global.scss"
               }
             ],

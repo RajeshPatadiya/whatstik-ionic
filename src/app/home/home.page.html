@@ -38,7 +38,7 @@
 		<div class="Pos(r) H($1xl)">
 			<div class="Pos(r) W(100%) H(100%)">
 				<div class="Pos(r) Ovx(a) H(100%) Maw(600px) M(a)">
-					<ul class="List(n) D(f) Ai(c) Jc(fs) W(a) H(100%)">
+					<ul class="List(n) D(f) Ai(c) Jc(fs) W(a) H(100%)" style="padding-left: 0;">
 						<li class="Pos(a) B(0) Start(0) W(100px) H(3px) Bdrs(2px) Bgc($primary) Trs($trstabslider)"
 							style="width: 92px; left: auto;"></li>
 						<li class="Fxs(0)"><a aria-current="page"
@@ -103,7 +103,7 @@
 	</header>
 </ion-header>
 <ion-content class="ion-no-padding" scrollEvents="true" appHideHeader [header]="header">
-	<main id="main" class="Pos(r) M(a) " style="max-width: 600px;">
+	<main id="main" class="Pos(r) M(a)" style="max-width: 600px;">
 		<div>
 			<div class="Pos(r) Z(1) Bgc($white3) Px($xxs) Py($sm)"><a class="D(b) Px($sm) Py($xms)"
 					href="/tag/0DQzw?referrer=trendingFeedPage">
@@ -198,24 +198,23 @@
 
 								<div class="Pos(r) Py($xs) Pend($xl)">
 									<a href="/profile/325065861?referer=trendingFeed" class="D(f) Ai(c) Pend($xxs) ">
-										<img alt="Aravind Thakor - Author on WhatsTik: Funny, Romantic, Videos, Shayari, Quotes"
-											src="https://cdngoogle.sharechat.com/ProfilePic/9bb040b_1595072354799_thumbnail_v2.jpeg"
-											data-src="https://cdngoogle.sharechat.com/ProfilePic/9bb040b_1595072354799_thumbnail_v2.jpeg"
+										<img alt="{{v.user_info.first_name}} - Author on WhatsTik: Funny, Romantic, Videos, Shayari, Quotes"
+											src="{{v.user_info.profile_pic}}" data-src="{{v.user_info.profile_pic}}"
 											class="W($xxl) H($xxl) Us(n) Of(c) Bgc($white4) Bdrs(50%) Fxs(0) lazyloaded">
 										<div class="H(100%) Pstart($xs) Fxg(1) Miw(0)">
 											<div class="H(100%) Ta(start) D(f) Jc(c) Ai(fs) Fxd(c)">
 												<div class="D(f) Ai(c) W(100%)">
 													<strong
 														class="Whs(nw) Ovx(h) Tov(e) Maw(100%) Fz($fzbutton) Lh($lhmediumCaption) Fw(600) C($darkText) Whs(nw) Ovx(h) Tov(e) Maw(100%)">
-														Rajesh P
+														{{v.user_info.first_name}} {{v.user_info.last_name}}
 													</strong>
 												</div>
 												<div
 													class="Fz($fzcaption) Lh($lhcaption) C($darkTextSecondary) Whs(nw) Ovx(h) Tov(e) Maw(100%) Mt($3xs)">
 													<div class="D(f)">
-														<div>200.5K એ જોયું</div>
+														<div>{{v.count.view}} એ જોયું</div>
 														<div class="Px($xxs)">•</div>
-														<div>1 દિવસ પહેલા</div>
+														<div>{{v.created_human}}</div>
 													</div>
 												</div>
 											</div>
@@ -247,22 +246,19 @@
 
 												<vg-player (onPlayerReady)="onPlayerReady($event,vdi)">
 													<vg-overlay-play></vg-overlay-play>
-													<vg-controls [vgFor]="post_id">
+													<vg-controls [vgFor]="v.id">
 														<vg-playback-button
 															[playbackValues]="['0.5', '1.0', '1.5','2.0' ]">
 														</vg-playback-button>
 														<vg-mute></vg-mute>
 													</vg-controls>
-													<video [vgMedia]="media" #media [attr.id]="post_id" class="video"
+													<video [vgMedia]="media" #media [attr.id]="v.id" class="video"
 														inViewport
 														[inViewportOptions]="{ partial: false, thresold:[0.8] }"
-														(inViewportAction)="onIntersection($event,vdi)" [src]="v.url"
-														poster="https://cdn.sharechat.com/1cd04250_1598158293564_keyframe_01_05.jpg"
-														type="video/mp4" preload="none"
+														(inViewportAction)="onIntersection($event,vdi)" [src]="v.video"
+														poster="{{v.thum}}" type="video/mp4" preload="none"
 														class="Us(n) Of(c) post-media Pos(a) Start(0) W(100%) T(0) H(100%)"
-														loop="" playsinline="">Your browser does not
-														support the
-														video
+														loop="0" playsinline="">Your browser does not support the video
 														tag.</video>
 												</vg-player>
 												<!-- <div
@@ -286,16 +282,15 @@
 									</div>
 								</a>
 								<div class="Ov(h)">
-									<div class="Py($xs) Whs(pw) Wow(bw) C($darkText) Fz($fzbutton)"><span
-											class="Pend($xxs) C($primary) Fw(600)">#📱
-											ગુજરાતી સ્ટેટ્સ</span> <span class="Pend($xxs) C($primary) Fw(600)">#🎶
-											ગુજરાતી ગીતો</span> <span class="Pend($xxs) C($primary) Fw(600)">#ઠાકોર
-											ઠાકોરની રીતે વાલા</span></div>
+									<div class="Py($xs) Whs(pw) Wow(bw) C($darkText) Fz($fzbutton)">
+										<span class="Pend($xxs) C($primary) Fw(600)">{{v.description}}</span>
+									</div>
 								</div>
 								<div class="D(f) Jc(sb) W(100%) Py($xs)">
 									<div class="D(f) Ai(c) Fxg(1)">
 										<div class="D(f) W(100%) Fxg(1)">
-											<div class="D(f) W(100%) Fxg(1)"><button
+											<div class="D(f) W(100%) Fxg(1)">
+												<button
 													class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t)  C($darkTextSecondary)"
 													aria-label="Click to share">
 													<div class="D(f) Jc(c) Ai(c)  ">
@@ -306,21 +301,25 @@
 														</div>
 														<span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">2.2K</span>
 													</div>
-												</button></div>
+												</button>
+											</div>
 										</div>
-										<div class="D(f) W(100%) Fxg(1)"><button
+										<div class="D(f) W(100%) Fxg(1)">
+											<button
 												class="Bds(n) Va(bl) Cur(p) Pos(r) D(f) Jc(c) Ai(c) Va(m) P(0) M(0) O(0) Us(n) Fz($fzbutton) Lh($lhbutton)  Bgc(t)  C($darkTextSecondary)"
-												aria-label="Click to like">
+												aria-label="Click to like" (click)="likeAction($event)">
 												<div class="D(f) Jc(c) Ai(c)  ">
 													<div
 														class="D(if) Jc(c) Ai(c) Va(m) W($lg) H($lg) active_Scale(1.15)  Trs($trsicon)  ">
-														<div class="W(100%) H(100%)  "><svg viewBox="0 0 24 24"
-																class="Fill(cc) Fxg(1)">
-																<path
-																	d="M15.1 4.9c-.1 0-.3 0-.4.1v-.4c0-.5-.3-1-.7-1.4-.4-.3-.9-.5-1.5-.5-.4 0-.8.2-1.1.4-.2-.5-.6-.8-1-1-.5-.1-1-.2-1.5 0-.2.1-.4.2-.6.4s-.4.4-.5.6c-.2.5-.3 1-.1 1.5l1.1 3.2c-1.4.3-2.6.9-3.6 1.9l-.2.2c-.4.4-.5.9-.5 1.4s.2 1 .5 1.4c-.5 0-1 .2-1.4.6-.4.3-.6.8-.6 1.3v.2c0 1.8.7 3.6 1.9 4.9s2.9 2.1 4.7 2.2 3.6-.5 4.9-1.7c1.4-1.2 2.3-2.8 2.5-4.6V7c0-.5-.2-1.1-.5-1.5-.4-.4-.9-.6-1.4-.6zm.4 10.6c-.2 1.4-.9 2.8-2 3.7s-2.5 1.4-4 1.2c-1.4-.2-2.7-.8-3.6-1.9S4.5 16 4.5 14.6c0-.1.1-.2.2-.3.2-.2.4-.2.6 0 .1.1.1.2.2.3v.1c0 1 .4 2 1.1 2.7 1.4 1.6 3.7 1.8 5.4.5.8-.6 1.4-1.5 1.5-2.5.1-.3.1-.5.1-.8v-.1c0-.9-.4-1.8-1-2.6-.4-.4-.8-.8-1.3-1-.5-.3-1.1-.4-1.8-.4-1 0-1.9.4-2.7 1l-.1.1c-.1 0-.2.1-.3.1s-.2-.1-.3-.1c-.1-.1-.1-.2-.1-.4 0-.1 0-.2.1-.3l.1-.1c1-1 2.3-1.5 3.6-1.6h1l-1.7-5v-.3c.1-.1.1-.2.3-.2h.4c.1 0 .2.1.2.2L12 9s0 .1.1.1h.2V9l-.1-4.1c0-.1 0-.2.1-.3s.2-.2.3-.2.2 0 .3.1.2.2.2.3l.3 4.3v.1h.1l1.1-2.4c.1-.2.2-.3.4-.3.1 0 .2.1.3.1.1.1.1.2.1.3zm-9.1-2.3c.5 0 1-.2 1.3-.5l.2-.1c.8-.6 1.8-.7 2.7-.3.3.1.6.4.8.6.4.5.6 1.1.6 1.7 0 .2 0 .3-.1.5-.1.6-.4 1.1-.9 1.5-.4.4-1 .6-1.6.6-.7 0-1.3-.3-1.8-.8-.4-.4-.6-1.1-.6-1.8v-.1c-.1-.4-.2-.9-.6-1.3z">
-																</path>
-															</svg></div>
-													</div><span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">5.1K</span>
+														<div class="W(100%) H(100%) ">
+															<div class="stage">
+																<div class="heart"
+																	[class]="(v.liked === '1')?'is-active':''"></div>
+															</div>
+														</div>
+													</div>
+													<span
+														class="Pstart($xxs) Fz($sm) Lh($lhcaption)">{{v.count?.like_count}}</span>
 												</div>
 											</button></div>
 										<div class="D(f) W(100%) Fxg(1)"><button
@@ -335,7 +334,8 @@
 																	d="M3 21H2a1 1 0 0 0 1.514.858L3 21zm5-9a1 1 0 1 0 0 2v-2zm8 2a1 1 0 1 0 0-2v2zM8 8a1 1 0 0 0 0 2V8zm8 2a1 1 0 1 0 0-2v2zm-8.95 8.57l-.515-.858.515.858zM6 5h12V3H6v2zm14 2v8h2V7h-2zm-2 10H9.108v2H18v-2zm-11.465.712l-4.05 2.43 1.03 1.716 4.05-2.43-1.03-1.716zM4 21V7H2v14h2zm4-7h8v-2H8v2zm0-4h8V8H8v2zm1.108 7a5 5 0 0 0-2.573.712l1.03 1.715A3 3 0 0 1 9.107 19v-2zM20 15a2 2 0 0 1-2 2v2a4 4 0 0 0 4-4h-2zM18 5a2 2 0 0 1 2 2h2a4 4 0 0 0-4-4v2zM6 3a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2V3z">
 																</path>
 															</svg></div>
-													</div><span class="Pstart($xxs) Fz($sm) Lh($lhcaption)">25</span>
+													</div><span
+														class="Pstart($xxs) Fz($sm) Lh($lhcaption)">{{v.count?.video_comment_count}}</span>
 												</div>
 											</button></div>
 									</div>
